@@ -20,10 +20,11 @@ class CreateTrainTable extends Migration
             $table->string('arrival_station', 50);
             $table->string('departure_time', 20);
             $table->string('arrival_time', 20);
-            $table->unsignedTinyInteger('train_code');
+            $table->unsignedSmallInteger('train_code');
             $table->unsignedTinyInteger('wagon_number');
             $table->boolean('on_time')->default(true);
             $table->boolean('train_canceled')->default(false);
+            $table->timestamps();
         });
     }
 

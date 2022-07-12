@@ -11,7 +11,7 @@ class TrainController extends Controller
     public function index() {
         $currentTime = Carbon::now()->format('Y-m-d');
 
-        $trains = Train::where($currentTime == `departure_time`);
+        $trains = Train::where('departure_time', '=', $currentTime)->get();
 
         return view('homepage', compact('trains'));
     }
